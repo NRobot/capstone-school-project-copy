@@ -1,25 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/home/strwbrygapple/Desktop/School/CS451/semester-group-assignment-team-best-group/MyTVStreamingService/MyTVStreamingService.csproj": {}
+    "C:\\Users\\john7\\Documents\\School Homeworks + Projects\\semester-group-assignment-team-best-group\\MyTVStreamingService\\MyTVStreamingService.csproj": {}
   },
   "projects": {
-    "/home/strwbrygapple/Desktop/School/CS451/semester-group-assignment-team-best-group/MyTVStreamingService/MyTVStreamingService.csproj": {
+    "C:\\Users\\john7\\Documents\\School Homeworks + Projects\\semester-group-assignment-team-best-group\\MyTVStreamingService\\MyTVStreamingService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/strwbrygapple/Desktop/School/CS451/semester-group-assignment-team-best-group/MyTVStreamingService/MyTVStreamingService.csproj",
+        "projectUniqueName": "C:\\Users\\john7\\Documents\\School Homeworks + Projects\\semester-group-assignment-team-best-group\\MyTVStreamingService\\MyTVStreamingService.csproj",
         "projectName": "MyTVStreamingService",
-        "projectPath": "/home/strwbrygapple/Desktop/School/CS451/semester-group-assignment-team-best-group/MyTVStreamingService/MyTVStreamingService.csproj",
-        "packagesPath": "/home/strwbrygapple/.nuget/packages/",
-        "outputPath": "/home/strwbrygapple/Desktop/School/CS451/semester-group-assignment-team-best-group/MyTVStreamingService/obj/",
+        "projectPath": "C:\\Users\\john7\\Documents\\School Homeworks + Projects\\semester-group-assignment-team-best-group\\MyTVStreamingService\\MyTVStreamingService.csproj",
+        "packagesPath": "C:\\Users\\john7\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\john7\\Documents\\School Homeworks + Projects\\semester-group-assignment-team-best-group\\MyTVStreamingService\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/home/strwbrygapple/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\john7\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -35,6 +40,26 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.Debug": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -53,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
