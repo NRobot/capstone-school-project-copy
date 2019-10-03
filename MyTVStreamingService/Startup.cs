@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using MyTVStreamingService.Data;
 
 namespace MyTVStreamingService
 {
@@ -24,6 +26,10 @@ namespace MyTVStreamingService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddRazorPages();
+
+            services.AddDbContext<MyTVContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("MyTVContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
