@@ -1,16 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
-
+<Project Sdk="Microsoft.NET.Sdk.Web" ToolsVersion="15.0">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+    <FileUpgradeFlags>40</FileUpgradeFlags>
+    <UpgradeBackupLocation>C:\Users\conspiracy2\Desktop\semester-group-assignment-team-best-group\MyTVStreamingService\Backup\</UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Remove="NewFolder\**" />
     <Content Remove="NewFolder\**" />
     <EmbeddedResource Remove="NewFolder\**" />
     <None Remove="NewFolder\**" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.0.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -25,7 +25,9 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
   </ItemGroup>
-
-  <ProjectExtensions><VisualStudio><UserProperties wwwroot_4lib_4bootstrap_4dist_4css_4bootstrap_1css_1map__JsonSchema="" /></VisualStudio></ProjectExtensions>
-
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties wwwroot_4lib_4bootstrap_4dist_4css_4bootstrap_1css_1map__JsonSchema="" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>
