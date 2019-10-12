@@ -32,6 +32,8 @@ namespace MyTVStreamingService
                     options.UseSqlite(Configuration.GetConnectionString("MyTVContext")));
             services.AddDbContext<ServiceContext>(options =>
                     options.UseSqlite(Configuration.GetConnectionString("ServiceContext")));
+			services.AddDbContext<ServiceContext>(options =>
+                    options.UseSqlite(Configuration.GetConnectionString("UserContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
