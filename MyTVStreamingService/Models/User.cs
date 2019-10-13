@@ -14,6 +14,9 @@ namespace MyTVStreamingService.Models
 
         [Display(Name = "Username"), StringLength(60, MinimumLength = 3), Required]
         public String userName { get; set; }
+
+        [Display(Name = "Password"), StringLength(60, MinimumLength = 9), Required]
+        public String userPassword { get; set; }
 		
 		[Display(Name = "First Name"), StringLength(60, MinimumLength = 3), Required]
         public String firstName { get; set; }

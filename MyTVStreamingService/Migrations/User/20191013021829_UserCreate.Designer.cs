@@ -9,8 +9,8 @@ using MyTVStreamingService.Data;
 namespace MyTVStreamingService.Migrations.User
 {
     [DbContext(typeof(UserContext))]
-    [Migration("20191013002950_InitialUserCreate")]
-    partial class InitialUserCreate
+    [Migration("20191013021829_UserCreate")]
+    partial class UserCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -43,6 +43,11 @@ namespace MyTVStreamingService.Migrations.User
                         .HasMaxLength(60);
 
                     b.Property<string>("userName")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasMaxLength(60);
+
+                    b.Property<string>("userPassword")
                         .IsRequired()
                         .HasColumnType("TEXT")
                         .HasMaxLength(60);

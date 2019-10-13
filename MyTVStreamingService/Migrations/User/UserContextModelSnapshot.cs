@@ -45,6 +45,11 @@ namespace MyTVStreamingService.Migrations.User
                         .HasColumnType("TEXT")
                         .HasMaxLength(60);
 
+                    b.Property<string>("userPassword")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasMaxLength(60);
+
                     b.HasKey("Id");
 
                     b.ToTable("User");
