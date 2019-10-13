@@ -1,30 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\conspiracy2\\Desktop\\semester-group-assignment-team-best-group\\MyTVStreamingService\\MyTVStreamingService.csproj": {}
+    "/home/strwbrygapple/Desktop/School/CS451/semester-group-assignment-team-best-group/MyTVStreamingService/MyTVStreamingService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\conspiracy2\\Desktop\\semester-group-assignment-team-best-group\\MyTVStreamingService\\MyTVStreamingService.csproj": {
+    "/home/strwbrygapple/Desktop/School/CS451/semester-group-assignment-team-best-group/MyTVStreamingService/MyTVStreamingService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\conspiracy2\\Desktop\\semester-group-assignment-team-best-group\\MyTVStreamingService\\MyTVStreamingService.csproj",
+        "projectUniqueName": "/home/strwbrygapple/Desktop/School/CS451/semester-group-assignment-team-best-group/MyTVStreamingService/MyTVStreamingService.csproj",
         "projectName": "MyTVStreamingService",
-        "projectPath": "C:\\Users\\conspiracy2\\Desktop\\semester-group-assignment-team-best-group\\MyTVStreamingService\\MyTVStreamingService.csproj",
-        "packagesPath": "C:\\Users\\conspiracy2\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\conspiracy2\\Desktop\\semester-group-assignment-team-best-group\\MyTVStreamingService\\obj\\",
+        "projectPath": "/home/strwbrygapple/Desktop/School/CS451/semester-group-assignment-team-best-group/MyTVStreamingService/MyTVStreamingService.csproj",
+        "packagesPath": "/home/strwbrygapple/.nuget/packages/",
+        "outputPath": "/home/strwbrygapple/Desktop/School/CS451/semester-group-assignment-team-best-group/MyTVStreamingService/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\conspiracy2\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/strwbrygapple/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -88,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.0.100/RuntimeIdentifierGraph.json"
         }
       }
     }
