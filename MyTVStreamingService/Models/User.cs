@@ -12,16 +12,16 @@ namespace MyTVStreamingService.Models
     {
         public int Id { get; set; }
 
-        [StringLength(60, MinimumLength = 3), Required]
+        [Display(Name = "Username"), StringLength(60, MinimumLength = 3), Required]
         public String userName { get; set; }
 		
-		[StringLength(60, MinimumLength = 3), Required]
+		[Display(Name = "First Name"), StringLength(60, MinimumLength = 3), Required]
         public String firstName { get; set; }
 		
-		[StringLength(60, MinimumLength = 3), Required]
+		[Display(Name = "Last Name"), StringLength(60, MinimumLength = 3), Required]
         public String lastName { get; set; }
 
-		[StringLength(60, MinimumLength = 3), Required]
+		[Display(Name = "Email"), StringLength(60, MinimumLength = 3), Required]
         public String emailAddress { get; set; }
 
         [Display(Name = "Account Creation Date"), DataType(DataType.Date)]

@@ -1,20 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "/home/strwbrygapple/Desktop/School/CS451/semester-group-assignment-team-best-group/MyTVStreamingService/MyTVStreamingService.csproj": {}
+    "C:\\Users\\Nathan\\source\\repos\\semester-group-assignment-team-best-group\\MyTVStreamingService\\MyTVStreamingService.csproj": {}
   },
   "projects": {
-    "/home/strwbrygapple/Desktop/School/CS451/semester-group-assignment-team-best-group/MyTVStreamingService/MyTVStreamingService.csproj": {
+    "C:\\Users\\Nathan\\source\\repos\\semester-group-assignment-team-best-group\\MyTVStreamingService\\MyTVStreamingService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/strwbrygapple/Desktop/School/CS451/semester-group-assignment-team-best-group/MyTVStreamingService/MyTVStreamingService.csproj",
+        "projectUniqueName": "C:\\Users\\Nathan\\source\\repos\\semester-group-assignment-team-best-group\\MyTVStreamingService\\MyTVStreamingService.csproj",
         "projectName": "MyTVStreamingService",
-        "projectPath": "/home/strwbrygapple/Desktop/School/CS451/semester-group-assignment-team-best-group/MyTVStreamingService/MyTVStreamingService.csproj",
-        "packagesPath": "/home/strwbrygapple/.nuget/packages/",
-        "outputPath": "/home/strwbrygapple/Desktop/School/CS451/semester-group-assignment-team-best-group/MyTVStreamingService/obj/",
+        "projectPath": "C:\\Users\\Nathan\\source\\repos\\semester-group-assignment-team-best-group\\MyTVStreamingService\\MyTVStreamingService.csproj",
+        "packagesPath": "C:\\Users\\Nathan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nathan\\source\\repos\\semester-group-assignment-team-best-group\\MyTVStreamingService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/strwbrygapple/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Nathan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"

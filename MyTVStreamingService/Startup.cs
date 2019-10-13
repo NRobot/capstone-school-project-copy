@@ -32,7 +32,7 @@ namespace MyTVStreamingService
                     options.UseSqlite(Configuration.GetConnectionString("MyTVContext")));
             services.AddDbContext<ServiceContext>(options =>
                     options.UseSqlite(Configuration.GetConnectionString("ServiceContext")));
-			services.AddDbContext<ServiceContext>(options =>
+			services.AddDbContext<UserContext>(options =>
                     options.UseSqlite(Configuration.GetConnectionString("UserContext")));
         }
 
