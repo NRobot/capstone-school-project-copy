@@ -768,3 +768,8 @@ C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStrea
 C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\obj\Debug\netcoreapp3.0\Razor\Views\User\Details.cshtml.g.cs
 C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\obj\Debug\netcoreapp3.0\Razor\Views\User\Edit.cshtml.g.cs
 C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\obj\Debug\netcoreapp3.0\Razor\Views\User\Index.cshtml.g.cs
+C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\obj\Debug\netcoreapp3.0\Razor\Views\Recommendations\Create.cshtml.g.cs
+C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\obj\Debug\netcoreapp3.0\Razor\Views\Recommendations\Delete.cshtml.g.cs
+C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\obj\Debug\netcoreapp3.0\Razor\Views\Recommendations\Details.cshtml.g.cs
+C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\obj\Debug\netcoreapp3.0\Razor\Views\Recommendations\Edit.cshtml.g.cs
+C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\obj\Debug\netcoreapp3.0\Razor\Views\Recommendations\Index.cshtml.g.cs

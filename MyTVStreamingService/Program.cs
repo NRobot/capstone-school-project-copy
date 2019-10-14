@@ -24,11 +24,19 @@ namespace MyTVStreamingService
             {
                 var services = scope.ServiceProvider;
 
-                try
+                // This seeds the Show Table 
+/*                 try
                 {
                     var context = services.GetRequiredService<MyTVContext>();
                     context.Database.Migrate();
                     SeedData.Initialize(services);
+                } */
+              // This Seeds the User Table
+                try
+                {
+                    var context = services.GetRequiredService<UserContext>();
+                    context.Database.Migrate();
+                    UserSeedData.Initialize(services);
                 }
                 catch (Exception ex)
                 {
