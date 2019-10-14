@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "/home/strwbrygapple/.dotnet/store/|arch|/|tfm|",
-      "/home/strwbrygapple/.nuget/packages"
+      "C:\\Users\\SangLy\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\SangLy\\.nuget\\packages"
     ]
   }
 }
