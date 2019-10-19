@@ -8377,19 +8377,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\SangLy\\.nuget\\packages\\": {}
+    "C:\\Users\\Nathan\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SangLy\\Pictures\\Testing 2\\MyTVStreamingService\\MyTVStreamingService.csproj",
+      "projectUniqueName": "C:\\Users\\Nathan\\source\\repos\\semester-group-assignment-team-best-group\\MyTVStreamingService\\MyTVStreamingService.csproj",
       "projectName": "MyTVStreamingService",
-      "projectPath": "C:\\Users\\SangLy\\Pictures\\Testing 2\\MyTVStreamingService\\MyTVStreamingService.csproj",
-      "packagesPath": "C:\\Users\\SangLy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SangLy\\Pictures\\Testing 2\\MyTVStreamingService\\obj\\",
+      "projectPath": "C:\\Users\\Nathan\\source\\repos\\semester-group-assignment-team-best-group\\MyTVStreamingService\\MyTVStreamingService.csproj",
+      "packagesPath": "C:\\Users\\Nathan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Nathan\\source\\repos\\semester-group-assignment-team-best-group\\MyTVStreamingService\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\SangLy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nathan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
