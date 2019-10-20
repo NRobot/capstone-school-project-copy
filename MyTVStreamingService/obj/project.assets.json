@@ -8390,6 +8390,9 @@
       "packagesPath": "C:\\Users\\Nathan\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Nathan\\source\\repos\\semester-group-assignment-team-best-group\\MyTVStreamingService\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
         "/home/strwbrygapple/.nuget/NuGet/NuGet.Config",
         "C:\\Users\\Nathan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8399,6 +8402,7 @@
         "netcoreapp3.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -8462,7 +8466,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.0.100/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
