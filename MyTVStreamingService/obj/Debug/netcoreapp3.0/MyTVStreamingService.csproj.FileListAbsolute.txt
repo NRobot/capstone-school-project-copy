@@ -783,9 +783,6 @@ C:\Users\SangLy\Pictures\Testing 2\MyTVStreamingService\obj\Debug\netcoreapp3.0\
 C:\Users\SangLy\Pictures\Testing 2\MyTVStreamingService\obj\Debug\netcoreapp3.0\Razor\Views\AdminNetworks\Details.cshtml.g.cs
 C:\Users\SangLy\Pictures\Testing 2\MyTVStreamingService\obj\Debug\netcoreapp3.0\Razor\Views\AdminNetworks\Edit.cshtml.g.cs
 C:\Users\SangLy\Pictures\Testing 2\MyTVStreamingService\obj\Debug\netcoreapp3.0\Razor\Views\AdminNetworks\Index.cshtml.g.cs
-C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\bin\Debug\netcoreapp3.0\appsettings.Development.json
-C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\bin\Debug\netcoreapp3.0\appsettings.json
-C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\bin\Debug\netcoreapp3.0\Properties\launchSettings.json
 C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\bin\Debug\netcoreapp3.0\MyTVStreamingService.exe
 C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\bin\Debug\netcoreapp3.0\MyTVStreamingService.deps.json
 C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\bin\Debug\netcoreapp3.0\MyTVStreamingService.runtimeconfig.json
@@ -928,8 +925,6 @@ C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStrea
 C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\obj\Debug\netcoreapp3.0\Razor\Views\AdminServices\Details.cshtml.g.cs
 C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\obj\Debug\netcoreapp3.0\Razor\Views\AdminServices\Edit.cshtml.g.cs
 C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\obj\Debug\netcoreapp3.0\Razor\Views\AdminServices\Index.cshtml.g.cs
-C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\obj\Debug\netcoreapp3.0\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\obj\Debug\netcoreapp3.0\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\obj\Debug\netcoreapp3.0\Razor\Views\Recommendations\Create.cshtml.g.cs
 C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\obj\Debug\netcoreapp3.0\Razor\Views\Recommendations\Delete.cshtml.g.cs
 C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\obj\Debug\netcoreapp3.0\Razor\Views\Recommendations\Details.cshtml.g.cs
@@ -960,10 +955,3 @@ C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStrea
 C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\obj\Debug\netcoreapp3.0\Razor\Views\User\Details.cshtml.g.cs
 C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\obj\Debug\netcoreapp3.0\Razor\Views\User\Edit.cshtml.g.cs
 C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\obj\Debug\netcoreapp3.0\Razor\Views\User\Index.cshtml.g.cs
-C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\obj\Debug\netcoreapp3.0\Razor\Views\Recommendations\Create.cshtml.g.cs
-C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\obj\Debug\netcoreapp3.0\Razor\Views\Recommendations\Delete.cshtml.g.cs
-C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\obj\Debug\netcoreapp3.0\Razor\Views\Recommendations\Details.cshtml.g.cs
-C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\obj\Debug\netcoreapp3.0\Razor\Views\Recommendations\Edit.cshtml.g.cs
-C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\obj\Debug\netcoreapp3.0\Razor\Views\Recommendations\Index.cshtml.g.cs
-C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\obj\Debug\netcoreapp3.0\MyTVStreamingService.dll
-C:\Users\Nathan\source\repos\semester-group-assignment-team-best-group\MyTVStreamingService\obj\Debug\netcoreapp3.0\MyTVStreamingService.pdb
