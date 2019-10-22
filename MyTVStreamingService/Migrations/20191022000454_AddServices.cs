@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace MyTVStreamingService.Migrations.Service
+namespace MyTVStreamingService.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class AddServices : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
