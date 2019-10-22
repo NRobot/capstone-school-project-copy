@@ -813,3 +813,9 @@ C:/Users/Nathan/source/repos/semester-group-assignment-team-best-group/MyTVStrea
 /home/strwbrygapple/Desktop/School/CS451/semester-group-assignment-team-best-group/MyTVStreamingService/obj/Debug/netcoreapp3.0/Razor/Views/Users/Details.cshtml.g.cs
 /home/strwbrygapple/Desktop/School/CS451/semester-group-assignment-team-best-group/MyTVStreamingService/obj/Debug/netcoreapp3.0/Razor/Views/Users/Edit.cshtml.g.cs
 /home/strwbrygapple/Desktop/School/CS451/semester-group-assignment-team-best-group/MyTVStreamingService/obj/Debug/netcoreapp3.0/Razor/Views/Users/Index.cshtml.g.cs
+/home/strwbrygapple/Desktop/School/CS451/semester-group-assignment-team-best-group/MyTVStreamingService/bin/Debug/netcoreapp3.0/NOT_bin/Debug/netcoreapp3.0/appsettings.Development.json
+/home/strwbrygapple/Desktop/School/CS451/semester-group-assignment-team-best-group/MyTVStreamingService/bin/Debug/netcoreapp3.0/NOT_bin/Debug/netcoreapp3.0/appsettings.json
+/home/strwbrygapple/Desktop/School/CS451/semester-group-assignment-team-best-group/MyTVStreamingService/bin/Debug/netcoreapp3.0/NOT_bin/Debug/netcoreapp3.0/MyTVStreamingService.deps.json
+/home/strwbrygapple/Desktop/School/CS451/semester-group-assignment-team-best-group/MyTVStreamingService/bin/Debug/netcoreapp3.0/NOT_bin/Debug/netcoreapp3.0/MyTVStreamingService.runtimeconfig.dev.json
+/home/strwbrygapple/Desktop/School/CS451/semester-group-assignment-team-best-group/MyTVStreamingService/bin/Debug/netcoreapp3.0/NOT_bin/Debug/netcoreapp3.0/MyTVStreamingService.runtimeconfig.json
+/home/strwbrygapple/Desktop/School/CS451/semester-group-assignment-team-best-group/MyTVStreamingService/bin/Debug/netcoreapp3.0/NOT_bin/Debug/netcoreapp3.0/Properties/launchSettings.json
