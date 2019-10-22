@@ -34,7 +34,7 @@ namespace MyTVStreamingService
               // This Seeds the User Table
                 try
                 {
-                    var context = services.GetRequiredService<UserContext>();
+                    var context = services.GetRequiredService<MyTVContext>();
                     context.Database.Migrate();
                     UserSeedData.Initialize(services);
                 }

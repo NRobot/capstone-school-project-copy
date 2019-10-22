@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace MyTVStreamingService.Migrations.User
+namespace MyTVStreamingService.Migrations
 {
-    public partial class UserCreate : Migration
+    public partial class AddUsers : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

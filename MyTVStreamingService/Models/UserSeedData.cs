@@ -10,9 +10,9 @@ namespace MyTVStreamingService.Models
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
-            using (var context = new UserContext(
+            using (var context = new MyTVContext(
                 serviceProvider.GetRequiredService<
-                    DbContextOptions<UserContext>>()))
+                    DbContextOptions<MyTVContext>>()))
             {
                 if (context.User.Any())
                 {

@@ -13,5 +13,6 @@ namespace MyTVStreamingService.Data
 
         public DbSet<Recommendation> Recommendation { get; set; }
         public DbSet<Service> Service { get; set; }
+        public DbSet<User> User { get; set; }
     }
 }

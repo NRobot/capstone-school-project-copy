@@ -10,11 +10,11 @@ using MyTVStreamingService.Models;
 
 namespace MyTVStreamingService.Controllers
 {
-    public class UserController : Controller
+    public class UsersController : Controller
     {
-        private readonly UserContext _context;
+        private readonly MyTVContext _context;
 
-        public UserController(UserContext context)
+        public UsersController(MyTVContext context)
         {
             _context = context;
         }
