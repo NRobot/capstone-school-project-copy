@@ -1,9 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using MyTVStreamingService.Models;
+
 
 namespace MyTVStreamingService.Data
 {
-    public class MyTVContext : DbContext
+    public class MyTVContext : IdentityDbContext<MyTVUser, MyTVRole, int>
     {
         public MyTVContext(DbContextOptions<MyTVContext> options)
             : base(options)
