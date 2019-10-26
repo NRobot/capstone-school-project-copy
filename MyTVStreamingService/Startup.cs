@@ -26,9 +26,18 @@ namespace MyTVStreamingService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
+            // Adding Identity
+            services.AddIdentity<MyTVUser, MyTVRole>(options =>
+            {
+                // You can add options for configuring details here
+                options.User.RequireUniqueEmail = true;
+            }).AddEntityFrameworkStores<MyTVContext>();
+
             services.AddControllersWithViews();
             services.AddRazorPages();
 
+            // If all goes correctly, this DB will be using Identity
             services.AddDbContext<MyTVContext>(options =>
                     options.UseSqlite(Configuration.GetConnectionString("MyTVContext")));
             services.AddDbContext<MyTVStreamingServiceContext>(options =>
@@ -50,6 +59,9 @@ namespace MyTVStreamingService
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            // Adding Identity
+            app.UseAuthentication();
 
             app.UseRouting();
 
