@@ -108,7 +108,7 @@ namespace MyTVStreamingService.Migrations
                         .HasColumnType("TEXT")
                         .HasMaxLength(60);
 
-                    b.Property<string>("userName")
+                    b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("TEXT")
                         .HasMaxLength(60);

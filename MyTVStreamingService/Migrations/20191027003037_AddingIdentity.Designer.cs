@@ -139,7 +139,7 @@ namespace MyTVStreamingService.Migrations
                         .HasColumnType("TEXT")
                         .HasMaxLength(60);
 
-                    b.Property<string>("Username")
+                    b.Property<string>("UserName")
                         .HasColumnType("TEXT")
                         .HasMaxLength(60);
 
@@ -246,7 +246,7 @@ namespace MyTVStreamingService.Migrations
                         .HasColumnType("TEXT")
                         .HasMaxLength(60);
 
-                    b.Property<string>("userName")
+                    b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("TEXT")
                         .HasMaxLength(60);
@@ -400,7 +400,7 @@ namespace MyTVStreamingService.Migrations
                         .HasColumnType("TEXT")
                         .HasMaxLength(60);
 
-                    b.Property<string>("userName")
+                    b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("TEXT")
                         .HasMaxLength(60);

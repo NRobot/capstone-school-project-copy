@@ -70,32 +70,32 @@ namespace MyTVStreamingService.Models
                     context.User.AddRange(
                         new User
                         {
-                            userName = "nRoberts2020",
-                            userPassword = "123456789",
-                            firstName = "Nathan",
-                            lastName = "Roberts",
-                            emailAddress = "NR@mytvadmin.com",
-                            accCreationDate = DateTime.Parse("2016-4-11")
+                            UserName = "nRoberts2020",
+                            UserPassword = "123456789",
+                            FirstName = "Nathan",
+                            LastName = "Roberts",
+                            EmailAddress = "NR@mytvadmin.com",
+                            AccCreationDate = DateTime.Parse("2016-4-11")
                         },
 
                         new User
                         {
-                            userName = "bobBobbington",
-                            userPassword = "234567891",
-                            firstName = "Bob",
-                            lastName = "Smith",
-                            emailAddress = "bobsmith@tacos.com",
-                            accCreationDate = DateTime.Parse("2019-1-8")
+                            UserName = "bobBobbington",
+                            UserPassword = "234567891",
+                            FirstName = "Bob",
+                            LastName = "Smith",
+                            EmailAddress = "bobsmith@tacos.com",
+                            AccCreationDate = DateTime.Parse("2019-1-8")
                         },
 
                         new User
                         {
-                            userName = "batman4ever1955",
-                            userPassword = "345678912",
-                            firstName = "Bat",
-                            lastName = "Man",
-                            emailAddress = "batman@batcave.com",
-                            accCreationDate = DateTime.Parse("2018-4-24")
+                            UserName = "batman4ever1955",
+                            UserPassword = "345678912",
+                            FirstName = "Bat",
+                            LastName = "Man",
+                            EmailAddress = "batman@batcave.com",
+                            AccCreationDate = DateTime.Parse("2018-4-24")
                         }
                     );
                 }
