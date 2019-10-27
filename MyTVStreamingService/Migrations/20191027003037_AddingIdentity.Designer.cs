@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyTVStreamingService.Data;
 
 namespace MyTVStreamingService.Migrations
 {
     [DbContext(typeof(MyTVContext))]
-    partial class MyTVContextModelSnapshot : ModelSnapshot
+    [Migration("20191027003037_AddingIdentity")]
+    partial class AddingIdentity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -281,26 +283,6 @@ namespace MyTVStreamingService.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Recommendation");
-                });
-
-            modelBuilder.Entity("MyTVStreamingService.Models.Recommended", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("count")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("recommendedshow")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("userID")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Recommended");
                 });
 
             modelBuilder.Entity("MyTVStreamingService.Models.Service", b =>
