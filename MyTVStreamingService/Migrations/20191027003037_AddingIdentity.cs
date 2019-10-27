@@ -117,12 +117,11 @@ namespace MyTVStreamingService.Migrations
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
-                    userName = table.Column<string>(maxLength: 60, nullable: false),
-                    userPassword = table.Column<string>(maxLength: 60, nullable: false),
-                    firstName = table.Column<string>(maxLength: 60, nullable: false),
-                    lastName = table.Column<string>(maxLength: 60, nullable: false),
-                    emailAddress = table.Column<string>(maxLength: 60, nullable: false),
-                    accCreationDate = table.Column<DateTime>(nullable: false)
+                    UserPassword = table.Column<string>(maxLength: 60, nullable: false),
+                    FirstName = table.Column<string>(maxLength: 60, nullable: false),
+                    LastName = table.Column<string>(maxLength: 60, nullable: false),
+                    EmailAddress = table.Column<string>(maxLength: 60, nullable: false),
+                    AccCreationDate = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {

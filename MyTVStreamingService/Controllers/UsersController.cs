@@ -54,7 +54,7 @@ namespace MyTVStreamingService.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,userName,userPassword,firstName,lastName,emailAddress,accCreationDate")] User user)
+        public async Task<IActionResult> Create([Bind("Id,UserName,userPassword,firstName,lastName,emailAddress,accCreationDate")] User user)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace MyTVStreamingService.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,userName,userPassword,firstName,lastName,emailAddress,accCreationDate")] User user)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,UserName,userPassword,firstName,lastName,emailAddress,accCreationDate")] User user)
         {
             if (id != user.Id)
             {

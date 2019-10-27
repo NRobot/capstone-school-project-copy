@@ -13,7 +13,7 @@ namespace MyTVStreamingService.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    userName = table.Column<string>(maxLength: 60, nullable: false),
+                    UserName = table.Column<string>(maxLength: 60, nullable: false),
                     userPassword = table.Column<string>(maxLength: 60, nullable: false),
                     firstName = table.Column<string>(maxLength: 60, nullable: false),
                     lastName = table.Column<string>(maxLength: 60, nullable: false),

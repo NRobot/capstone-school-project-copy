@@ -12,23 +12,23 @@ namespace MyTVStreamingService.Models
 	public class User : IdentityUser<int>
 	{
 		
-		[Display(Name = "Username"), StringLength(60, MinimumLength = 3), Required]
-		public String userName { get; set; }
+		//[Display(Name = "UserName"), StringLength(60, MinimumLength = 3), Required]
+		//public String UserName { get; set; }
 
 		[Display(Name = "Password"), StringLength(60, MinimumLength = 6), Required]
-		public String userPassword { get; set; }
+		public String UserPassword { get; set; }
 		
 		[Display(Name = "First Name"), StringLength(60, MinimumLength = 3), Required]
-		public String firstName { get; set; }
+		public String FirstName { get; set; }
 		
 		[Display(Name = "Last Name"), StringLength(60, MinimumLength = 3), Required]
-		public String lastName { get; set; }
+		public String LastName { get; set; }
 
 		[Display(Name = "Email"), StringLength(60, MinimumLength = 3), Required]
-		public String emailAddress { get; set; }
+		public String EmailAddress { get; set; }
 
 		[Display(Name = "Account Creation Date"), DataType(DataType.Date)]
-		public DateTime accCreationDate { get; set; }
+		public DateTime AccCreationDate { get; set; }
 
 		
 	}
