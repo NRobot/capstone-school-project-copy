@@ -10,11 +10,11 @@ using MyTVStreamingService.Models;
 
 namespace MyTVStreamingService.Controllers
 {
-    public class AdminHelpdesksController : Controller
+    public class AdminHelpdeskController : Controller
     {
         private readonly MyTVContext _context;
 
-        public AdminHelpdesksController(MyTVContext context)
+        public AdminHelpdeskController(MyTVContext context)
         {
             _context = context;
         }
