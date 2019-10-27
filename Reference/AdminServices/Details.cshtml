@@ -1,0 +1,44 @@
+﻿<!-- @model MyTVStreamingService.Models.AdminService
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <a asp-controller="AdminNetworks" asp-action="Create">Add Network</a>
+
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Service)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Service)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+    </dl>
+    <table class="table">
+        <tr>
+            <th>Network</th>
+        </tr>
+        @foreach(var item in Model.AdminNetworks)
+        {
+            <tr>
+                <td> @Html.DisplayFor(m=>item.Network)</td>
+                <td>
+                    <a asp-controller="AdminNetworks" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div> -->
