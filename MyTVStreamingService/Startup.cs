@@ -30,9 +30,7 @@ namespace MyTVStreamingService
             services.AddRazorPages();
 
             services.AddDbContext<MyTVContext>(options =>
-                    options.UseSqlite(Configuration.GetConnectionString("MyTVContext")));
-            services.AddDbContext<MyTVStreamingServiceContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("MyTVStreamingServiceContext")));
+                options.UseSqlite(Configuration.GetConnectionString("MyTVContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
