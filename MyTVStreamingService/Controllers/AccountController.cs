@@ -10,64 +10,82 @@ namespace MyTVStreamingService.Controllers
 {
     public class AccountController : Controller
     {
-        private UserManager<MyTVUser> UserMgr { get; }
-        private SignInManager<MyTVUser> SignInMgr { get; }
+        private UserManager<MyTVUser> userManager;
+        private SignInManager<MyTVUser> signInManager;
 
         public AccountController(UserManager<MyTVUser> userManager,
             SignInManager<MyTVUser> signInManager)
         {
-            UserMgr = userManager;
-            SignInMgr = signInManager;
+            this.userManager = userManager;
+            this.signInManager = signInManager;
         }
 
+        [HttpPost]
         public async Task<IActionResult> Logout()
         {
-            await SignInMgr.SignOutAsync();
-            return RedirectToAction("Index", "Home");
+            await signInManager.SignOutAsync();
+            return RedirectToAction("index", "home");
         }
 
-        public async Task<IActionResult> Login()
+        [HttpGet]
+        public IActionResult Register()
         {
-            var result = await SignInMgr.PasswordSignInAsync("TestUser", "Test123!", false, false);
-            if (result.Succeeded)
-            {
-                return RedirectToAction("Index", "Home");
-            }
-            else
-            {
-                ViewBag.Result = "result is: " + result.ToString();
-            }
             return View();
         }
-
-        public async Task<IActionResult> Register()
+        
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterUser model)
         {
-            try
+            if (ModelState.IsValid)
             {
-                ViewBag.Message = "User already registered";
+                // Copy data from RegisterViewModel to IdentityUser
+                var user = new MyTVUser {UserName = model.Email, Email = model.Email};
 
-                MyTVUser user = await UserMgr.FindByNameAsync("TestUser");
-                if (user == null)
+                // Store user data in AspNetUsers database table
+                var result = await userManager.CreateAsync(user, model.Password);
+
+                // If user is successfully created, sign-in the user using
+                // SignInManager and redirect to index action of HomeController
+                if (result.Succeeded)
                 {
-                    user = new MyTVUser
-                    {
-                        UserName = "TestUser",
-                        EmailAddress = "TestUser@test.com",
-                        FirstName = "John",
-                        LastName = "Wick",
-                        AccCreationDate = DateTime.Now
-                    };
+                    await signInManager.SignInAsync(user, isPersistent: false);
+                    return RedirectToAction("index", "home");
+                }
 
-                    IdentityResult result = await UserMgr.CreateAsync(user, "Test123!");
-                    ViewBag.Message = "User was created";
+                // If there are any errors, add them to the ModelState object
+                // which will be displayed by the validation summary tag helper
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
                 }
             }
-            catch (Exception ex)
+            
+            return View(model);
+        }
+
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginUser model)
+        {
+            if (ModelState.IsValid)
             {
-                ViewBag.Message = ex.Message;
+                var result = await signInManager.PasswordSignInAsync(
+                    model.Email, model.Password, model.RememberMe, false);
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("index", "home");
+                }
+
+                ModelState.AddModelError(string.Empty, "Invalid Login Attempt");
             }
 
-            return View();
+            return View(model);
         }
     }
 }

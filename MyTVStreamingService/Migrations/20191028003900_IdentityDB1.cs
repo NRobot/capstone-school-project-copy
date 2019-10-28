@@ -3,84 +3,26 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MyTVStreamingService.Migrations
 {
-    public partial class AddingIdentity : Migration
+    public partial class IdentityDB1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<int>(
-                name: "AccessFailedCount",
-                table: "User",
-                nullable: false,
-                defaultValue: 0);
-
-            migrationBuilder.AddColumn<string>(
-                name: "ConcurrencyStamp",
-                table: "User",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "Email",
-                table: "User",
-                nullable: true);
-
-            migrationBuilder.AddColumn<bool>(
-                name: "EmailConfirmed",
-                table: "User",
-                nullable: false,
-                defaultValue: false);
-
-            migrationBuilder.AddColumn<bool>(
-                name: "LockoutEnabled",
-                table: "User",
-                nullable: false,
-                defaultValue: false);
-
-            migrationBuilder.AddColumn<DateTimeOffset>(
-                name: "LockoutEnd",
-                table: "User",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "NormalizedEmail",
-                table: "User",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "NormalizedUserName",
-                table: "User",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "PasswordHash",
-                table: "User",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "PhoneNumber",
-                table: "User",
-                nullable: true);
-
-            migrationBuilder.AddColumn<bool>(
-                name: "PhoneNumberConfirmed",
-                table: "User",
-                nullable: false,
-                defaultValue: false);
-
-            migrationBuilder.AddColumn<string>(
-                name: "SecurityStamp",
-                table: "User",
-                nullable: true);
-
-            migrationBuilder.AddColumn<bool>(
-                name: "TwoFactorEnabled",
-                table: "User",
-                nullable: false,
-                defaultValue: false);
-
-            migrationBuilder.AddColumn<string>(
-                name: "UserName",
-                table: "User",
-                nullable: true);
+            migrationBuilder.CreateTable(
+                name: "AdminHelpdesk",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Title = table.Column<string>(maxLength: 60, nullable: false),
+                    Username = table.Column<string>(maxLength: 60, nullable: true),
+                    EmailAddress = table.Column<string>(nullable: false),
+                    Message = table.Column<string>(nullable: false),
+                    ArrivalTime = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AdminHelpdesk", x => x.Id);
+                });
 
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
@@ -117,15 +59,58 @@ namespace MyTVStreamingService.Migrations
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
-                    UserPassword = table.Column<string>(maxLength: 60, nullable: false),
-                    FirstName = table.Column<string>(maxLength: 60, nullable: false),
-                    LastName = table.Column<string>(maxLength: 60, nullable: false),
-                    EmailAddress = table.Column<string>(maxLength: 60, nullable: false),
+                    FirstName = table.Column<string>(maxLength: 60, nullable: true),
+                    LastName = table.Column<string>(maxLength: 60, nullable: true),
                     AccCreationDate = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Recommendation",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(nullable: true),
+                    QueryString = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Recommendation", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Service",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    name = table.Column<string>(maxLength: 60, nullable: false),
+                    cost = table.Column<double>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Service", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Show",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Title = table.Column<string>(maxLength: 60, nullable: false),
+                    ReleaseDate = table.Column<DateTime>(nullable: false),
+                    Genre = table.Column<string>(maxLength: 30, nullable: false),
+                    NumberOfSeasons = table.Column<int>(nullable: false),
+                    Rating = table.Column<double>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Show", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -275,6 +260,9 @@ namespace MyTVStreamingService.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "AdminHelpdesk");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
             migrationBuilder.DropTable(
@@ -290,66 +278,19 @@ namespace MyTVStreamingService.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Recommendation");
+
+            migrationBuilder.DropTable(
+                name: "Service");
+
+            migrationBuilder.DropTable(
+                name: "Show");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
-
-            migrationBuilder.DropColumn(
-                name: "AccessFailedCount",
-                table: "User");
-
-            migrationBuilder.DropColumn(
-                name: "ConcurrencyStamp",
-                table: "User");
-
-            migrationBuilder.DropColumn(
-                name: "Email",
-                table: "User");
-
-            migrationBuilder.DropColumn(
-                name: "EmailConfirmed",
-                table: "User");
-
-            migrationBuilder.DropColumn(
-                name: "LockoutEnabled",
-                table: "User");
-
-            migrationBuilder.DropColumn(
-                name: "LockoutEnd",
-                table: "User");
-
-            migrationBuilder.DropColumn(
-                name: "NormalizedEmail",
-                table: "User");
-
-            migrationBuilder.DropColumn(
-                name: "NormalizedUserName",
-                table: "User");
-
-            migrationBuilder.DropColumn(
-                name: "PasswordHash",
-                table: "User");
-
-            migrationBuilder.DropColumn(
-                name: "PhoneNumber",
-                table: "User");
-
-            migrationBuilder.DropColumn(
-                name: "PhoneNumberConfirmed",
-                table: "User");
-
-            migrationBuilder.DropColumn(
-                name: "SecurityStamp",
-                table: "User");
-
-            migrationBuilder.DropColumn(
-                name: "TwoFactorEnabled",
-                table: "User");
-
-            migrationBuilder.DropColumn(
-                name: "UserName",
-                table: "User");
         }
     }
 }
