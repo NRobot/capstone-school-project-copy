@@ -193,21 +193,14 @@ namespace MyTVStreamingService.Migrations
                         .HasColumnType("TEXT")
                         .HasMaxLength(256);
 
-                    b.Property<string>("EmailAddress")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(60);
-
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
                         .HasColumnType("TEXT")
                         .HasMaxLength(60);
 
                     b.Property<string>("LastName")
-                        .IsRequired()
                         .HasColumnType("TEXT")
                         .HasMaxLength(60);
 
@@ -243,11 +236,6 @@ namespace MyTVStreamingService.Migrations
                     b.Property<string>("UserName")
                         .HasColumnType("TEXT")
                         .HasMaxLength(256);
-
-                    b.Property<string>("UserPassword")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(60);
 
                     b.HasKey("Id");
 
@@ -325,82 +313,6 @@ namespace MyTVStreamingService.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Show");
-                });
-
-            modelBuilder.Entity("MyTVStreamingService.Models.User", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("AccCreationDate")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("EmailAddress")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(60);
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(60);
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(60);
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("UserName")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("UserPassword")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasMaxLength(60);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
