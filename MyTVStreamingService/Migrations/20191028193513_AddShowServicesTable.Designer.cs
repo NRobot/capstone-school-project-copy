@@ -9,8 +9,8 @@ using MyTVStreamingService.Data;
 namespace MyTVStreamingService.Migrations
 {
     [DbContext(typeof(MyTVContext))]
-    [Migration("20191028180509_InitialCreateShowService")]
-    partial class InitialCreateShowService
+    [Migration("20191028193513_AddShowServicesTable")]
+    partial class AddShowServicesTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -49,24 +49,21 @@ namespace MyTVStreamingService.Migrations
                     b.ToTable("AdminHelpdesk");
                 });
 
-            modelBuilder.Entity("MyTVStreamingService.Models.Recommended", b =>
+            modelBuilder.Entity("MyTVStreamingService.Models.Recommendation", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("count")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("recommendedshow")
+                    b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("userID")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("QueryString")
+                        .HasColumnType("TEXT");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
-                    b.ToTable("Recommended");
+                    b.ToTable("Recommendation");
                 });
 
             modelBuilder.Entity("MyTVStreamingService.Models.Service", b =>

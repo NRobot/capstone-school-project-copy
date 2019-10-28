@@ -113,6 +113,23 @@ namespace MyTVStreamingService.Migrations
                     b.ToTable("Show");
                 });
 
+            modelBuilder.Entity("MyTVStreamingService.Models.ShowService", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ServiceFK")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ShowFK")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("ShowService");
+                });
+
             modelBuilder.Entity("MyTVStreamingService.Models.User", b =>
                 {
                     b.Property<int>("Id")
