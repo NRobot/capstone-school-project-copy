@@ -15,6 +15,25 @@ namespace MyTVStreamingService.Models
                     DbContextOptions<MyTVContext>>()))
             {
                 // Seed Show table if it is empty
+                if (!context.Recommended.Any())
+                {
+                    context.Recommended.AddRange(
+                        new Recommended
+                        {
+                            userID = 1,
+                            show = "Game of Thrones",
+                            count = 3
+                        },
+
+                        new Recommended
+                        {
+                            userID = 1,
+                            show = "The Simpsons",
+                            count = 1
+                        }
+
+                        );
+                }
                 if (!context.Show.Any())
                 {
                     context.Show.AddRange(
