@@ -1,31 +1,31 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MyTVStreamingService.Migrations
 {
-    public partial class AddRecommendation : Migration
+    public partial class AddRecommended : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Recommendation",
+                name: "Recommended",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
+                    ID = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(nullable: true),
-                    QueryString = table.Column<string>(nullable: true)
+                    userID = table.Column<int>(nullable: false),
+                    recommendedshow = table.Column<string>(nullable: true),
+                    count = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Recommendation", x => x.Id);
+                    table.PrimaryKey("PK_Recommended", x => x.ID);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Recommendation");
+                name: "Recommended");
         }
     }
 }
