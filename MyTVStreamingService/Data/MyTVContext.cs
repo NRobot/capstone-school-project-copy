@@ -16,6 +16,5 @@ namespace MyTVStreamingService.Data
         public DbSet<User> User { get; set; }
 
         public DbSet<AdminHelpdesk> AdminHelpdesk { get; set; }
-        public DbSet<Recommended> Recommended { get; set; }
     }
 }

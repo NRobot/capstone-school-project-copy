@@ -64,26 +64,6 @@ namespace MyTVStreamingService.Migrations
                     b.ToTable("Recommendation");
                 });
 
-            modelBuilder.Entity("MyTVStreamingService.Models.Recommended", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("count")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("recommendedshow")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("userID")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Recommended");
-                });
-
             modelBuilder.Entity("MyTVStreamingService.Models.Service", b =>
                 {
                     b.Property<int>("ID")
