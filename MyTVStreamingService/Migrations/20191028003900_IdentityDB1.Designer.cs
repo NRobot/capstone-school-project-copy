@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyTVStreamingService.Data;
 
 namespace MyTVStreamingService.Migrations
 {
     [DbContext(typeof(MyTVContext))]
-    partial class MyTVContextModelSnapshot : ModelSnapshot
+    [Migration("20191028003900_IdentityDB1")]
+    partial class IdentityDB1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -266,26 +268,6 @@ namespace MyTVStreamingService.Migrations
                     b.ToTable("Recommendation");
                 });
 
-            modelBuilder.Entity("MyTVStreamingService.Models.Recommended", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("count")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("show")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("userID")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Recommended");
-                });
-
             modelBuilder.Entity("MyTVStreamingService.Models.Service", b =>
                 {
                     b.Property<int>("ID")
@@ -335,24 +317,6 @@ namespace MyTVStreamingService.Migrations
                     b.ToTable("Show");
                 });
 
-            modelBuilder.Entity("MyTVStreamingService.Models.ShowService", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("ServiceFK")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("ShowFK")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("ShowService");
-                });
-
-            modelBuilder.Entity("MyTVStreamingService.Models.User", b =>
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.HasOne("MyTVStreamingService.Models.MyTVRole", null)
