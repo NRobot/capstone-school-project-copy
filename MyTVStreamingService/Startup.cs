@@ -73,6 +73,9 @@ namespace MyTVStreamingService
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            // Adding Identity
+            app.UseAuthentication();
+
             app.UseRouting();
 
             // Adding Identity
