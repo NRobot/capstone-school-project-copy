@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyTVStreamingService.Models
 {
-    public class LoginUser
+    public class LoginUserModel
     {
         [Required]
         [EmailAddress]

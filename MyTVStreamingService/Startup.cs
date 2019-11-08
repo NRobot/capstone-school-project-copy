@@ -49,6 +49,9 @@ namespace MyTVStreamingService
                 options.User.RequireUniqueEmail = true;
             }).AddEntityFrameworkStores<MyTVContext>();
 
+            services.AddMvc();
+
+
             services.AddControllersWithViews();
             services.AddRazorPages();
 

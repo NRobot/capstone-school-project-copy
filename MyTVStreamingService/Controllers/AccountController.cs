@@ -70,7 +70,7 @@ namespace MyTVStreamingService.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(LoginUser model)
+        public async Task<IActionResult> Login(LoginUserModel model)
         {
             if (ModelState.IsValid)
             {
