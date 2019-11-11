@@ -12,7 +12,20 @@
     <None Remove="NewFolder\**" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Remove="Migrations\20191109233256_AddIdentity.cs" />
+    <Compile Remove="Migrations\20191109233256_AddIdentity.Designer.cs" />
+    <Compile Remove="Migrations\20191109234142_AddIdentity.cs" />
+    <Compile Remove="Migrations\20191109234142_AddIdentity.Designer.cs" />
+    <Compile Remove="Migrations\20191110000920_AddIdentity.cs" />
+    <Compile Remove="Migrations\20191110000920_AddIdentity.Designer.cs" />
+    <Compile Remove="Migrations\20191110002750_AddIdentity.cs" />
+    <Compile Remove="Migrations\20191110002750_AddIdentity.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.0.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
@@ -25,9 +38,6 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Migrations\" />
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>

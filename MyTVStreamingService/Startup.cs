@@ -11,6 +11,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using MyTVStreamingService.Data;
 using MyTVStreamingService.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 namespace MyTVStreamingService
 {
@@ -26,9 +28,16 @@ namespace MyTVStreamingService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
-            // Adding Identity
-            services.AddIdentity<MyTVUser, MyTVRole>(options =>
+            services.AddControllersWithViews();
+            services.AddRazorPages();
+            services.AddEntityFrameworkSqlite();
+
+            services.AddDbContext<MyTVContext>(options =>
+                options.UseSqlite(Configuration.GetConnectionString("MyTVContext")));
+            services.AddDefaultIdentity<MyTVUser>().AddRoles<IdentityRole>().AddEntityFrameworkStores<MyTVContext>();
+
+
+            services.Configure<IdentityOptions>(options =>
             {
                 // Password settings.
                 options.Password.RequireDigit = true;
@@ -47,14 +56,18 @@ namespace MyTVStreamingService
                 options.User.AllowedUserNameCharacters =
                 "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
                 options.User.RequireUniqueEmail = true;
-            }).AddEntityFrameworkStores<MyTVContext>();
+            });
 
-            services.AddControllersWithViews();
-            services.AddRazorPages();
+            services.ConfigureApplicationCookie(options =>
+            {
+                // Cookie settings
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
 
-            // If all goes correctly, this DB will be using Identity
-            services.AddDbContext<MyTVContext>(options =>
-                options.UseSqlite(Configuration.GetConnectionString("MyTVContext")));
+                options.LoginPath = "/Identity/Account/Login";
+                options.AccessDeniedPath = "/Identity/Account/AccessDenied";
+                options.SlidingExpiration = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -73,14 +86,9 @@ namespace MyTVStreamingService
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            // Adding Identity
-            app.UseAuthentication();
-
             app.UseRouting();
 
-            // Adding Identity
             app.UseAuthentication();
-
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -88,6 +96,7 @@ namespace MyTVStreamingService
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
         }
     }
