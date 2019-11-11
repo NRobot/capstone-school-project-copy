@@ -54,17 +54,64 @@ namespace MyTVStreamingService.Controllers
         // POST: Recommendations/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // [HttpPost]
+        // [ValidateAntiForgeryToken]
+        // public async Task<IActionResult> Create([Bind("Id,Name,QueryString")] Recommendation recommendation)
+        // {
+        //     if (ModelState.IsValid)
+        //     {
+        //         _context.Add(recommendation);
+        //         await _context.SaveChangesAsync();
+        //         return RedirectToAction(nameof(Index));
+        //     }
+        //     return View(recommendation);
+        // }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,QueryString")] Recommendation recommendation)
+        public async Task<IActionResult> Create(int[] rec)
         {
-            if (ModelState.IsValid)
+            int[] showIds = rec;
+            SortedList<int, Service> workingSet = new SortedList<int, Service>();
+            foreach(int showId in showIds)
             {
-                _context.Add(recommendation);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                var servicesList = 
+                (from showService in _context.Set<ShowService>()
+                join show in _context.Set<Show>() on showService.ShowFK equals show.Id
+                join service in _context.Set<Service>() on showService.ServiceFK equals service.ID
+                where show.Id == showId
+                orderby service.cost
+                select service).ToList();
+                
+                Console.WriteLine(servicesList.GetType());
+                // No service carries the show.
+                if(servicesList.Count == 0)
+                {
+                    Console.WriteLine("Impossible Combination");
+                    // return;
+                }
+                // Check for service already in working set which carries show
+                bool showAlreadyCarried = false;
+                foreach(Service service in servicesList)
+                {
+                    if(workingSet.ContainsKey(service.ID))
+                    {
+                        showAlreadyCarried = true;
+                        break;
+                    }
+                }
+                if(showAlreadyCarried)
+                {
+                    break;
+                }
+                // No service already in list carries show.  Add cheapest service to list.
+                workingSet.Add(servicesList.First().ID, servicesList.First());
             }
-            return View(recommendation);
+            ViewData["Services"] = workingSet.ToList();
+            ViewData["Shows"] = (from show in _context.Set<Show>()
+                                where showIds.Contains(show.Id)
+                                select show).ToList();
+            return View("Views/Recommendations/Details.cshtml");
         }
 
         // GET: Recommendations/Edit/5
