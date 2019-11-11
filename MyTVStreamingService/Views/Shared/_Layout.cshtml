@@ -1,5 +1,6 @@
-﻿ @using Microsoft.AspNetCore.Identity
- @inject SignInManager<MyTVUser> signInManager;
+﻿@using Microsoft.AspNetCore.Identity;
+
+@inject SignInManager<MyTVUser> signInManager;
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,6 +21,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-lg-inline-flex flex-lg-row-reverse">
+                    <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
@@ -27,40 +29,18 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Shows" asp-action="Index">All Shows</a>
                         </li>
-                        @*<li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Users</a>
-                        </li>*@
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        @*<li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="AdminServices" asp-action="Index">Admin</a>
-                        </li>*@
-                        @if (signInManager.IsSignedIn(User))
+                        @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
                         {
                             <li class="nav-item">
-                                <form method="post" asp-controller="account" asp-action="logout">
-                                <button type="submit" style="width:auto"
-                                        class="nav-link btn btn-link py-0">
-                                        Logout @User.Identity.Name
-                                    </button>
-                                </form>
-                            </li>
-                        }
-                        else
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link" asp-controller="account" asp-action="register">
-                                    Register
-                                </a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Services" asp-action="Index">Services</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-controller="account" asp-action="login">
-                                    Login
-                                </a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="AdminHelpdesk" asp-action="Index">Helpdesk</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Administration" asp-action="ListRoles">Manage Roles</a>
                             </li>
                         }
-
                     </ul>
                 </div>
             </div>
