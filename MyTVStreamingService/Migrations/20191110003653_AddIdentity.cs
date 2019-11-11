@@ -8,6 +8,23 @@ namespace MyTVStreamingService.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "AdminHelpdesk",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Title = table.Column<string>(maxLength: 60, nullable: false),
+                    Username = table.Column<string>(maxLength: 60, nullable: true),
+                    EmailAddress = table.Column<string>(nullable: false),
+                    Message = table.Column<string>(nullable: false),
+                    ArrivalTime = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AdminHelpdesk", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
                 {
@@ -155,6 +172,37 @@ namespace MyTVStreamingService.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Service",
+                columns: table => new
+                {
+                    ID = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    name = table.Column<string>(maxLength: 60, nullable: false),
+                    cost = table.Column<double>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Service", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Show",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Title = table.Column<string>(maxLength: 60, nullable: false),
+                    ReleaseDate = table.Column<DateTime>(nullable: false),
+                    Genre = table.Column<string>(maxLength: 30, nullable: false),
+                    NumberOfSeasons = table.Column<int>(nullable: false),
+                    Rating = table.Column<double>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Show", x => x.Id);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -196,6 +244,9 @@ namespace MyTVStreamingService.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "AdminHelpdesk");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
             migrationBuilder.DropTable(
@@ -209,6 +260,12 @@ namespace MyTVStreamingService.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Service");
+
+            migrationBuilder.DropTable(
+                name: "Show");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
