@@ -4,8 +4,6 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -19,58 +17,73 @@
         Title: <input type="text" name="SearchString">
         <input type="submit" value="Search" />
     </p>
+
 </form>
 
-<form asp-controller="Recommendations" asp-action="Create" method="post">
-<table class="table">
-    <thead>
+<form asp-controller="Recommendations" asp-action="Index" method="get">
+    <table>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Shows[0].Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Shows[0].ReleaseDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Shows[0].Genre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Shows[0].NumberOfSeasons)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Shows[0].Rating)
-            </th>
-            <th></th>
+            <td>
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="320px">
+                                @Html.DisplayNameFor(model => model.Shows[0].Title)
+                            </th>
+                            <th width="130px">
+                                @Html.DisplayNameFor(model => model.Shows[0].ReleaseDate)
+                            </th>
+                            <th width="201px">
+                                @Html.DisplayNameFor(model => model.Shows[0].Genre)
+                            </th>
+                            <th width="172px">
+                                @Html.DisplayNameFor(model => model.Shows[0].NumberOfSeasons)
+                            </th>
+                            <th width="61px">
+                                @Html.DisplayNameFor(model => model.Shows[0].Rating)
+                            </th>
+                            <th width="201px" height="50px" style="visibility:hidden"></th>
+                        </tr>
+                    </thead>
+                </table>
+            </td>
         </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model.Shows)
-        {
-            <tr>
-                <td>
-                    <input type="checkbox" name="rec[]" value="@Html.DisplayFor(modelItem => item.Id)" />
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ReleaseDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Genre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NumberOfSeasons)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Rating)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+        <tr>
+            <td>
+                <div style="display:block; height:280px; width:100%; overflow:auto">
+                    <table>
+                        <tbody>
+                            @foreach (var item in Model.Shows)
+                            {
+                                <tr style="border-top: 1px solid grey; height: 14px">
+                                    <td width="330px" style="padding:15px">
+                                        <input type="checkbox" name="rec[]" value="@Html.DisplayFor(modelItem => item.Id)" />
+                                        @Html.DisplayFor(modelItem => item.Title)
+                                    </td>
+                                    <td width="130px">
+                                        @Html.DisplayFor(modelItem => item.ReleaseDate)
+                                    </td>
+                                    <td width="205px">
+                                        @Html.DisplayFor(modelItem => item.Genre)
+                                    </td>
+                                    <td width="180px">
+                                        @Html.DisplayFor(modelItem => item.NumberOfSeasons)
+                                    </td>
+                                    <td width="65px">
+                                        @Html.DisplayFor(modelItem => item.Rating)
+                                    </td>
+                                    <td width="205px">
+                                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
     <input type="submit" value="Add to Recommendation" />
 </form>

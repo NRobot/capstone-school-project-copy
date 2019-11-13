@@ -2,7 +2,51 @@
     ViewData["Title"] = "Home Page";
 }
 
-    <div class="text-center">
-        <h1 class="display-4">Welcome</h1>
-        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    </div>
+<style>
+    /* Position of Image on web page*/
+    div.gallery {
+        position: absolute;
+        top: 250px;
+        left: 130px;
+    }
+
+    /* Image setting */
+    img {
+        position: relative;
+        background-color: white;
+        padding: 5px;
+        border: 1px solid lightgray;
+        width: 250px;
+        height: 200px;
+        margin: -17px;
+        z-index: 0;
+        -webkit-transform: perspective(400px ) rotateY( 45deg ); /*Chrome, Safari, Opera*/
+        -webkit-transition: 0.5s; /*Chrome, Safari*/
+        -ms-transform: perspective(400px ) rotateY( 45deg ); /*IE*/
+        transition: 0.5s; /*Standard*/
+        -moz-transform: perspective(400px ) rotateY( 45deg ); /*Firefox*/
+        -moz-transition: 0.5s; /*Firefox*/
+        -o-transition: 0.5s; /*Opera*/
+        box-shadow: 5px 5px 2px lightgray;
+    }
+
+    /* Show Image when hover */
+    img:hover {
+        z-index: 10;
+        -webkit-transform: scale(2,2) perspective(400px ) rotateY( 0deg ); /*Chrome, Safari, Opera*/
+        -moz-transform: scale(2,2) perspective(400px ) rotateY( 0deg ); /*Firefox*/
+        transform: scale(2,2) perspective(400px ) rotateY( 0deg ); /*Standard*/
+    }
+</style>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+
+<div class="gallery">
+    <img src="~/css/Sling.jpg">
+    <img src="~/css/DirectTv_Now.jpg">
+    <img src="~/css/Playstation_Vue.jpg">
+    <img src="~/css/Hulu_Live_Tv.jpg">
+    <img src="~/css/Youtube_Tv.jpg">
+</div>
