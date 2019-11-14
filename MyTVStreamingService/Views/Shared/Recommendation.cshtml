@@ -1,0 +1,19 @@
+<h1>Your Recommendation</h1>
+<h2>To watch all of these shows:</h2>
+<ul>
+    @foreach (var show in ViewData["Shows"] as List<Show>)
+    {
+        <li>
+            @show.Title
+        </li>
+    }
+</ul>
+<h2>Subscribe to all of these services</h2>
+<ul>
+    @foreach (var service in ViewData["Services"] as List<Service>)
+    {
+        <li>
+            @service.name
+        </li>
+    }
+</ul>

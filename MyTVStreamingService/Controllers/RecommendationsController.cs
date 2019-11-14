@@ -69,6 +69,7 @@ namespace MyTVStreamingService.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public async Task<IActionResult> Create(int[] rec)
         {
             int[] showIds = rec;
@@ -88,7 +89,7 @@ namespace MyTVStreamingService.Controllers
                 if(servicesList.Count == 0)
                 {
                     Console.WriteLine("Impossible Combination");
-                    // return;
+                    return View("Recommendation");
                 }
                 // Check for service already in working set which carries show
                 bool showAlreadyCarried = false;
@@ -107,11 +108,12 @@ namespace MyTVStreamingService.Controllers
                 // No service already in list carries show.  Add cheapest service to list.
                 workingSet.Add(servicesList.First().ID, servicesList.First());
             }
-            ViewData["Services"] = workingSet.ToList();
+
+            ViewData["Services"] = workingSet.Values.ToList();
             ViewData["Shows"] = (from show in _context.Set<Show>()
                                 where showIds.Contains(show.Id)
                                 select show).ToList();
-            return View("Views/Recommendations/Details.cshtml");
+            return View("Recommendation");
         }
 
         // GET: Recommendations/Edit/5
