@@ -69,10 +69,5 @@ namespace MyTVStreamingService.Controllers
                                 select show).ToList();
             return View("Recommendation");
         }
-
-        private bool RecommendationExists(int id)
-        {
-            return _context.Recommendation.Any(e => e.Id == id);
-        }
     }
 }
