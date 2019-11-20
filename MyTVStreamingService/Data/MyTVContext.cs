@@ -21,9 +21,6 @@ namespace MyTVStreamingService.Data
         public DbSet<ShowService> ShowService{get;set;}
         public DbSet<Recommendation> Recommendation { get; set; }
         public DbSet<Service> Service { get; set; }
-
         public DbSet<AdminHelpdesk> AdminHelpdesk { get; set; }
-
-        public DbSet<MyTVStreamingService.Models.Recommended> Recommended { get; set; }
     }
 }
