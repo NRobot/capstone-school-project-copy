@@ -22,32 +22,32 @@ namespace MyTVStreamingService.Models
                     {
                         ID = 1,
                         name = "Sling Orange",
-                        cost = 15
+                        cost = 15.00
                     },
                     new Service
                     {
                         ID = 2,
                         name = "Sling Blue",
-                        cost = 15
+                        cost = 15.00
                     },
                     new Service
                     {
                         ID = 3,
                         name = "Sling Blue + Orange",
-                        cost = 25
+                        cost = 25.00
                     },
 
                     new Service
                     {
                         ID = 4,
                         name = "Directtv Now Plus", // new name is AT&T tv now
-                        cost = 50
+                        cost = 50.00
                     },
                     new Service
                     {
                         ID = 5,
                         name = "Directtv Now Max", // new name is AT&T tv now
-                        cost = 70
+                        cost = 70.00
                     },
 
                     new Service
@@ -307,7 +307,7 @@ namespace MyTVStreamingService.Models
                         new Show
                         {
                             Id = 24,
-                            Title = "Dog and Beth: On the Hunt",                       // CMT Channel --> Direct TV Max
+                            Title = "Dog and Beth - On the Hunt",                       // CMT Channel --> Direct TV Max
                             ReleaseDate = DateTime.Parse("2013-03-21"),
                             Genre = "Reality Television",
                             NumberOfSeasons = 3,
@@ -457,7 +457,7 @@ namespace MyTVStreamingService.Models
                         new Show
                         {
                             Id = 39,
-                            Title = "The Story of Film: An Odyssey",                            // TCM --> Playstation Vue Core
+                            Title = "The Story of Film - An Odyssey",                            // TCM --> Playstation Vue Core
                             ReleaseDate = DateTime.Parse("2011-09-03"),
                             Genre = "Documentary",
                             NumberOfSeasons = 1,

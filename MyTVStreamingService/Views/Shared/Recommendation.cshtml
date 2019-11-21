@@ -1,19 +1,61 @@
-<h1>Your Recommendation</h1>
-<h2>To watch all of these shows:</h2>
-<ul>
-    @foreach (var show in ViewData["Shows"] as List<Show>)
-    {
-        <li>
-            @show.Title
-        </li>
+<!-- Style table and cost -->
+<!-- Container for service and show -->
+<style>
+    table {
+        margin: auto;
     }
-</ul>
-<h2>Subscribe to all of these services</h2>
-<ul>
+
+   .box_service{
+       width:1000px;
+       height:200px;
+       position:relative;
+   }
+
+   .cost{
+       position: absolute;
+       color: white;
+       font-size: 50px;
+       right: 100px;
+       bottom: 20px;
+   }
+
+   .box_show{
+       width: 100px;
+       height: 200px;
+       padding: 15px;
+       align-content: center;
+   }
+
+</style>
+
+<!-- Reading data from service and shows -->
+<!-- Display images of service and shows by title  -->
+<!-- Service/Show images located in wwwroot/css/... -->
+<table>
     @foreach (var service in ViewData["Services"] as List<Service>)
     {
-        <li>
-            @service.name
-        </li>
+        <tr>
+            <td colspan="10">
+
+                <div class="box_service">
+                    <img src="@Url.Content("~/css/Service_Images/" + @service.name + ".jpg")" style="width: 100%; height:100%" />
+                    <div class="cost">
+                        $@service.cost
+                    </div>
+                </div>            
+
+            </td>
+        </tr>
+
+        @foreach (var show in ViewData["Shows"] as List<Show>)
+        {
+            <td width="100px" height="200" align="center">
+                <div class="box_show">
+                    <img src="@Url.Content("~/css/Show_Images/" + @show.Title + ".jpg")" width="50" height="50" />
+                    <br />
+                    @show.Title
+                </div>
+            </td>
+        }
     }
-</ul>
+</table>
