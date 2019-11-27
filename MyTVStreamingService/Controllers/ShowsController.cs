@@ -28,8 +28,9 @@ namespace MyTVStreamingService.Controllers
                                             orderby s.Genre
                                             select s.Genre;
 
-            var shows = from s in _context.Show
-                         select s;
+            var shows = (IQueryable<Show>) from s in _context.Show
+                        orderby s.Title
+                        select s;
 
             if (!string.IsNullOrEmpty(searchString))
             {
