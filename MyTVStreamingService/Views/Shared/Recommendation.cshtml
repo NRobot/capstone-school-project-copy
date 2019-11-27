@@ -42,22 +42,20 @@
                     <div class="cost">
                         $@service.cost
                     </div>
-                </div>            
+                </div>
 
             </td>
         </tr>
-    }
-</table>
 
-<table>
-    @foreach (var show in ViewData["Shows"] as List<Show>)
-    {
-        <td width="100px" height="200" align="center">
-            <div class="box_show">
-                <img src="@Url.Content("~/css/Show_Images/" + @show.Title + ".jpg")" width="50" height="50" />
-                <br />
-                @show.Title
-            </div>
-        </td>
+        @foreach (var show in ViewData[@service.name] as List<Show>)
+        {
+            <td width="100px" height="200" align="center">
+                <div class="box_show">
+                    <img src="@Url.Content("~/css/Show_Images/" + @show.Title + ".jpg")" width="50" height="50" />
+                    <br />
+                    @show.Title
+                </div>
+            </td>
+        }
     }
 </table>

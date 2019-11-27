@@ -55,18 +55,44 @@ namespace MyTVStreamingService.Controllers
                         break;
                     }
                 }
-                if(showAlreadyCarried)
+                if (!showAlreadyCarried)
                 {
-                    break;
+                    // No service already in list carries show.  Add cheapest service to list.
+                    workingSet.Add(servicesList.First().ID, servicesList.First());
                 }
-                // No service already in list carries show.  Add cheapest service to list.
-                workingSet.Add(servicesList.First().ID, servicesList.First());
             }
 
             ViewData["Services"] = workingSet.Values.ToList();
-            ViewData["Shows"] = (from show in _context.Set<Show>()
-                                where showIds.Contains(show.Id)
-                                select show).ToList();
+
+            string Placeholder_Service;
+
+            // loop through services
+            // loop through shows 
+            // store matching shows + service into sorted list
+            // store sorted list in view data for html
+            foreach (var serv in ViewData["Services"] as List<Service>)
+            {
+                SortedList<int, Show> showSet = new SortedList<int, Show>();
+                Placeholder_Service = serv.name;
+
+                foreach (int showId in showIds)
+                {
+                    var showList =
+                    (from showService in _context.Set<ShowService>()
+                     join show in _context.Set<Show>() on showService.ShowFK equals show.Id
+                     join service in _context.Set<Service>() on showService.ServiceFK equals service.ID
+                     where show.Id == showId
+                     where Placeholder_Service == service.name
+                     select show).ToList();
+
+                    if (showList.Count != 0)
+                    {
+                        showSet.Add(showId, showList.First());
+                    }
+                }
+                ViewData[Placeholder_Service] = showSet.Values.ToList();
+            }
+
             return View("Recommendation");
         }
     }
