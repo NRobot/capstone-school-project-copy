@@ -58,6 +58,7 @@
                                 <tr style="border-top: 1px solid grey; height: 14px">
                                     <td width="330px" style="padding:15px">
                                         <input type="checkbox" name="rec[]" value="@Html.DisplayFor(modelItem => item.Id)" />
+                                        <img src="@Url.Content("~/css/Show_Images/" + @item.Title + ".jpg")" width="50" height="50" />
                                         @Html.DisplayFor(modelItem => item.Title)
                                     </td>
                                     <td width="130px">

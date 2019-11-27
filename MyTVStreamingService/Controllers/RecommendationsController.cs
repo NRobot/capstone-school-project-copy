@@ -88,6 +88,7 @@ namespace MyTVStreamingService.Controllers
                     if (showList.Count != 0)
                     {
                         showSet.Add(showId, showList.First());
+                        showIds = showIds.Where(val => val != showId).ToArray();
                     }
                 }
                 ViewData[Placeholder_Service] = showSet.Values.ToList();
