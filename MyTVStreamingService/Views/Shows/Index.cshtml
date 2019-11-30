@@ -1,13 +1,23 @@
 ﻿@model MyTVStreamingService.Models.ShowGenreViewModel
 
+@inject SignInManager<MyTVUser> signInManager;
+
 @{
     ViewData["Title"] = "Index";
 }
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-
+@if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+{
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+}
+else
+{
+    <p>
+        <br />
+    </p>
+}
 <form asp-controller="Shows" asp-action="Index" method="get">
     <p>
         <select asp-for="ShowGenre" asp-items="Model.Genres">
@@ -57,7 +67,7 @@
                             {
                                 <tr style="border-top: 1px solid grey; height: 14px">
                                     <td>
-                                        <input type="checkbox" name="rec[]" value="@Html.DisplayFor(modelItem => item.Id)" id="@Html.DisplayFor(modelItem => item.Id)"/>
+                                        <input type="checkbox" name="rec[]" value="@Html.DisplayFor(modelItem => item.Id)" id="@Html.DisplayFor(modelItem => item.Id)" />
                                     </td>
                                     <td width="330px" style="padding:15px">
                                         <label for="@Html.DisplayFor(modelItem => item.Id)">
@@ -77,11 +87,20 @@
                                     <td width="65px">
                                         @Html.DisplayFor(modelItem => item.Rating)
                                     </td>
-                                    <td width="205px">
-                                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                                    </td>
+                                    @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                                    {
+                                        <td width="205px">
+                                            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td width="205px" style="text-align:center">
+                                            <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                                        </td>
+                                    }
                                 </tr>
                             }
                         </tbody>
@@ -90,5 +109,6 @@
             </td>
         </tr>
     </table>
+    <br />
     <input type="submit" value="Add to Recommendation" />
 </form>
