@@ -13,7 +13,7 @@ namespace MyTVStreamingService.Models
         [StringLength(60, MinimumLength = 3), Required]
         public string Title { get; set; }
 
-        [Display(Name = "Username"), StringLength(60, MinimumLength = 3)]
+        [Display(Name = "Username"), StringLength(60, MinimumLength = 3), Required]
         public string Username { get; set; }
 
         [Display(Name = "Email"), DataType(DataType.EmailAddress), Required]
