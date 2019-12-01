@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -11,23 +12,27 @@ using MyTVStreamingService.Models;
 
 namespace MyTVStreamingService.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin, User")]
     public class AdminHelpdeskController : Controller
     {
         private readonly MyTVContext _context;
+        private readonly UserManager<MyTVUser> userManager;
 
-        public AdminHelpdeskController(MyTVContext context)
+        public AdminHelpdeskController(MyTVContext context, UserManager<MyTVUser> userManager)
         {
             _context = context;
+            this.userManager = userManager;
         }
 
         // GET: AdminHelpdesks
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.AdminHelpdesk.ToListAsync());
         }
 
         // GET: AdminHelpdesks/Details/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -63,12 +68,23 @@ namespace MyTVStreamingService.Controllers
             {
                 _context.Add(adminHelpdesk);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+
+                bool isAdmin = User.IsInRole("Admin");
+
+                if (isAdmin)
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Shows");
+                }
             }
             return View(adminHelpdesk);
         }
 
         // GET: AdminHelpdesks/Edit/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -87,6 +103,7 @@ namespace MyTVStreamingService.Controllers
         // POST: AdminHelpdesks/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Username,EmailAddress,Message,ArrivalTime")] AdminHelpdesk adminHelpdesk)
@@ -120,6 +137,7 @@ namespace MyTVStreamingService.Controllers
         }
 
         // GET: AdminHelpdesks/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -138,6 +156,7 @@ namespace MyTVStreamingService.Controllers
         }
 
         // POST: AdminHelpdesks/Delete/5
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

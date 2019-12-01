@@ -1,12 +1,11 @@
 ﻿@model MyTVStreamingService.Models.AdminHelpdesk
+@inject SignInManager<MyTVUser> signInManager;
 
 @{
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>AdminHelpdesk</h4>
+<h4>Report a show</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -33,11 +32,6 @@
                 <span asp-validation-for="Message" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ArrivalTime" class="control-label"></label>
-                <input asp-for="ArrivalTime" class="form-control" />
-                <span asp-validation-for="ArrivalTime" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
@@ -45,7 +39,14 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+    {
+        <a asp-action="Index">Back to List</a>
+    }
+    else
+    {
+        <a asp-controller="Shows" asp-action="Index">Back to List</a>
+    }
 </div>
 
 @section Scripts {
